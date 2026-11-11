@@ -65,11 +65,11 @@ public class Menu {
         double amount = Double.parseDouble(read.nextLine());
 
         Transaction deposit = new Transaction(LocalDate.now(), LocalTime.now(),
-                        description, vendor, amount);
+                        description, vendor, Math.abs(amount));
 
         Ledger.storeTransaction(deposit);
 
-        System.out.print("Deposit Recorded Successfully");
+        System.out.println("Deposit Recorded Successfully");
     }
 
     public static void makePayment(Scanner read) {
@@ -249,7 +249,7 @@ public class Menu {
                             description, vendorSearch, amount);
 
                     if (customResults.isEmpty()) {
-                        System.out.print("No transactions found.");
+                        System.out.println("No transactions found.");
                         break;
                     }
                     for (Transaction transaction : customResults) {

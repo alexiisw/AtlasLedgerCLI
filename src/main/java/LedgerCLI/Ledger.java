@@ -5,13 +5,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+import static LedgerCLI.Transaction.timeFormatter;
+
 public class Ledger {
     public static ArrayList<Transaction> loadTransactions() {
         ArrayList<Transaction> ledger = new ArrayList<>();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("transactions.csv"));
-            System.out.print("Employee Info:\n");
 
             String transactionInfo;
             reader.readLine(); // will skip the first line in the note
@@ -40,15 +41,14 @@ public class Ledger {
             BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv", true));
 
             //structures input how I want
-            writer.write(transaction.getDate() + "|" +
-                            transaction.getTime() + "|" +
+            writer.write(transaction.getDate() + "|" + // \n will start and store input on the new line
+                            transaction.getTime().format(Transaction.timeFormatter) + "|" +
                             transaction.getDescription() + "|" +
                             transaction.getVendor() + "|" +
-                            transaction.getAmount()
+                            String.format("%.2f|", transaction.getAmount())  // ensures there is at the end to separate from next transaction input
             );
 
             writer.newLine();
-            System.out.println("Transaction recorded");
 
             writer.close();
 

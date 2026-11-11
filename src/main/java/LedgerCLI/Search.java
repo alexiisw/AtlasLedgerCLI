@@ -63,7 +63,7 @@ public class Search {
 
         for (Transaction transaction : ledger) { // cycles through the ledger
             if (transaction.getVendor().toUpperCase().contains(vendorSearch.toUpperCase())) { // compares the input vs the transactions
-                matchingVendor.add(transaction); // if the transaction is found it will return result
+                matchingVendor.add(transaction); // if the transaction is found, even if not fully type d out ex "ama" instead of "amazon", it will return result
             }
         }
         return matchingVendor; // if the transaction isn't found, it will return nothing
@@ -93,13 +93,14 @@ public class Search {
             if (!descriptionInput.isBlank()) {
 
                 if (!transaction.getDescription().toUpperCase().contains(descriptionInput.toUpperCase())){
-                    matches = false;
+                    matches = false; //compares the input vs the transactions; will return result if containing similar letter ex "lun" instead of "lunch"
                 }
             }
             if (!vendorInput.isBlank()) {
 
-                if (!transaction.getVendor().equalsIgnoreCase(vendorInput)){
-                    matches = false;
+//              if (!transaction.getVendor().equalsIgnoreCase(vendorInput)){ // only works if you enter full vendor name
+                if (!transaction.getVendor().toUpperCase().contains(vendorInput.toUpperCase())) {
+                    matches = false; // compares the input vs the transactions; will return result if containing similar letter ex "ama" instead of "Amazon"
                 }
             }
             if (!amountInput.isBlank()) {
