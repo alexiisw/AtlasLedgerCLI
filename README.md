@@ -92,7 +92,7 @@ Application Menu
 
 +--------------------------------------+
 |           ATLAS LEDGER CLI           |
-|   Financial Transaction Management  |
+|   Financial Transaction Management   |
 +--------------------------------------+
 
 D) Add Deposit
@@ -107,13 +107,29 @@ Follow the on-screen prompts to manage transactions, view ledger entries, and ge
 
 Project Structure
 
-LedgerCLI/
+AtlasLedgerCLI/
 │
-├── Main.java
-├── Menu.java
-├── Ledger.java
-├── Search.java
-├── Transaction.java
+├── .idea/
+├── .mvn/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── LedgerCLI/
+│   │   │       ├── Ledger.java
+│   │   │       ├── Main.java
+│   │   │       ├── Menu.java
+│   │   │       ├── Search.java
+│   │   │       └── Transaction.java
+│   │   │
+│   │   └── resources/
+│   │
+│   └── test/
+│
+├── target/
+├── .gitignore
+├── pom.xml
+├── README.md
 └── transactions.csv
 
 Transaction File Format
