@@ -4,6 +4,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import static LedgerCLI.Transaction.timeFormatter;
 
@@ -33,6 +34,10 @@ public class Ledger {
         } catch (IOException e) {
             System.out.println("Transaction file not found.");
         }
+        ledger.sort(Comparator.comparing(Transaction::getDate) // cleaner version of transaction1.getDate().compareTo(transaction2.getDate())
+            .thenComparing(Transaction::getTime) //in case 2 transactions occur on the same date; since both records dates are equal, Java asks what's the next thing I should compare?
+            .reversed()); // sorts by oldest first instead of by newest first
+
         return ledger;
     }
     public static void storeTransaction(Transaction transaction) {
@@ -45,11 +50,9 @@ public class Ledger {
                             transaction.getTime().format(Transaction.timeFormatter) + "|" +
                             transaction.getDescription() + "|" +
                             transaction.getVendor() + "|" +
-                            String.format("%.2f|", transaction.getAmount())  // ensures there is at the end to separate from next transaction input
-            );
+                            String.format("%.2f|", transaction.getAmount()));  // ensures there is at the end to separate from next transaction input
 
             writer.newLine();
-
             writer.close();
 
         } catch (IOException e) {

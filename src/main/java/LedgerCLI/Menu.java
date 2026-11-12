@@ -52,7 +52,19 @@ public class Menu {
             }
         }
     }
+    private static double readAmount(Scanner read) {
+        while (true) {
+            // ensures the proper value is inputted
+            try {
+                double amount = Double.parseDouble(read.nextLine().trim());
+                if (amount > 0) return amount;
+                System.out.println("Please enter an amount greater than 0.");
 
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a number, for example 25.00");
+            }
+        }
+    }
     public static void addDeposit(Scanner read) {
 
         System.out.print("Description: ");
@@ -62,7 +74,7 @@ public class Menu {
         String vendor = read.nextLine();
 
         System.out.print("Amount: ");
-        double amount = Double.parseDouble(read.nextLine());
+        double amount = readAmount(read);
 
         Transaction deposit = new Transaction(LocalDate.now(), LocalTime.now(),
                         description, vendor, Math.abs(amount));
@@ -71,7 +83,6 @@ public class Menu {
 
         System.out.println("Deposit Recorded Successfully");
     }
-
     public static void makePayment(Scanner read) {
 
         System.out.print("Description: ");
@@ -81,7 +92,7 @@ public class Menu {
         String vendor = read.nextLine();
 
         System.out.print("Amount: ");
-        double amount = Double.parseDouble(read.nextLine());
+        double amount = readAmount(read);
 
         Transaction payment = new Transaction(LocalDate.now(), LocalTime.now(),
                     description, vendor, -Math.abs(amount));
@@ -90,7 +101,6 @@ public class Menu {
 
         System.out.println("Payment Recorded Successfully");
     }
-
     public static void ledgerScreen(ArrayList<Transaction> ledger, Scanner read) {
 
         boolean displayLedger = true;
@@ -111,23 +121,23 @@ public class Menu {
             switch (choice) {
 
                 case 'A':
-                    for (int i = ledger.size() - 1; i >= 0; i--) {
-                        ledger.get(i).displayInfo();
+                    for (Transaction transaction : ledger) {
+                        transaction.displayInfo(); // displays full ledger
                     }
                     break;
 
                 case 'D':
-                    for (int i = ledger.size() - 1; i >= 0; i--) {
-                        if (ledger.get(i).getAmount() > 0) {
-                            ledger.get(i).displayInfo();
+                    for (Transaction transaction : ledger) {
+                        if (transaction.getAmount() > 0) {
+                            transaction.displayInfo(); // displays the positive amounts
                         }
                     }
                     break;
 
                 case 'P':
-                    for (int i = ledger.size() - 1; i >= 0; i--) {
-                        if (ledger.get(i).getAmount() < 0) {
-                            ledger.get(i).displayInfo();
+                    for (Transaction transaction : ledger) {
+                        if (transaction.getAmount() < 0) {
+                            transaction.displayInfo(); // displays the negative amounts
                         }
                     }
                     break;
@@ -145,7 +155,6 @@ public class Menu {
             }
         }
     }
-
     public static void reportsScreen(ArrayList<Transaction> ledger, Scanner read) {
 
         boolean reportsRunning = true;
