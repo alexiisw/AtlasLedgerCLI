@@ -1,18 +1,18 @@
-date|time|description|vendor|amount|
-2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50|
-2023-04-15|11:15:00|Invoice 1001 paid|Joe|1500.00|
-2023-08-12|09:30:15|Office supplies|Staples|-45.75|
-2024-02-05|12:45:00|Client invoice 1002 paid|Sarah|850.00|
-2023-11-21|08:15:30|Monthly software subscription|Adobe|-54.99|
-2025-01-14|14:20:10|Web design services|Mike|1200.00|
-2024-06-30|10:05:45|Printer paper and ink|Office Depot|-67.25|
-2023-09-08|16:30:00|Invoice 1003 paid|Jessica|975.50|
-2025-03-19|11:10:20|Business lunch|Panera Bread|-32.80|
-2024-10-25|13:55:15|Website maintenance|David|350.00|
-2023-05-03|09:40:00|Internet bill|Comcast|-89.99|
-2025-07-11|15:25:30|Invoice 1004 paid|Robert|2100.00|
-2026-11-11|14:43:32|cleaning supplies|Walmart|-34.67|
-2026-11-11|14:45:49|groceries|Costco|-78.49|
-2026-11-11|14:50:28|stipend|YUU|100.00|
-2026-11-11|14:51:05|lunch|Cheesesteak Shop|-16.37|
-2026-11-11|14:58:34|lunch reimbursement|YUU|20.00|
+date|time|description|vendor|amount
+2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50
+2023-04-15|11:15:00|Invoice 1001 paid|Joe|1500.00
+2023-08-12|09:30:15|Office supplies|Staples|-45.75
+2024-02-05|12:45:00|Client invoice 1002 paid|Sarah|850.00
+2023-11-21|08:15:30|Monthly software subscription|Adobe|-54.99
+2025-01-14|14:20:10|Web design services|Mike|1200.00
+2024-06-30|10:05:45|Printer paper and ink|Office Depot|-67.25
+2023-09-08|16:30:00|Invoice 1003 paid|Jessica|975.50
+2025-03-19|11:10:20|Business lunch|Panera Bread|-32.80
+2024-10-25|13:55:15|Website maintenance|David|350.00
+2023-05-03|09:40:00|Internet bill|Comcast|-89.99
+2025-07-11|15:25:30|Invoice 1004 paid|Robert|2100.00
+2026-11-11|14:43:32|cleaning supplies|Walmart|-34.67
+2026-11-11|14:45:49|groceries|Costco|-78.49
+2026-11-11|14:50:28|stipend|YUU|100.00
+2026-11-11|14:51:05|lunch|Cheesesteak Shop|-16.37
+2026-11-11|14:58:34|lunch reimbursement|YUU|20.00

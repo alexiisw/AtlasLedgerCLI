@@ -5,8 +5,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//import static OnlineStore.Search.*;
-
 public class Menu {
     public static void homeMenu(ArrayList<Transaction> ledger) {// uses the inventory it receives
         Scanner read = new Scanner(System.in); // name scanner what its doing

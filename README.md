@@ -1,4 +1,4 @@
-Atlas Ledger CLI
+Atlas Ledger - Financial Transaction Management System
 
 A Java-based financial transaction management application that allows users to track deposits and payments through a command-line interface (CLI). Transaction data is stored locally in a CSV file (transactions.csv), allowing financial records to persist between program executions.
 
